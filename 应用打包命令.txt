@@ -1,0 +1,31 @@
+打包命令（必须 32 位 Python3.8.10）
+pip install pyinstaller==5.13.2
+--以上是为了兼容Server2008系统
+
+pyinstaller --onefile --windowed --icon=app.ico frp_gui_fixed.py
+
+----------------------------------
+
+使用 spec 文件（高级，适合长期项目）
+生成 spec：
+bash
+运行
+
+pyinstaller --onefile --windowed --icon=app.ico frp_gui_fixed.py
+
+之后直接编译 spec：
+bash
+运行
+
+pyinstaller frp_gui_fixed.spec
+
+spec 文件里也可以手动修改 icon 字段：
+
+python
+运行
+
+exe = EXE(
+    ...
+    icon='app.ico',
+    ...
+)
